@@ -1,0 +1,18 @@
+.hero{
+        background: url(../img/hero-circle-backgrond.svg) ;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+.testclr{
+        background-color:#CCCCCC;
+      }
+.btnclr{
+        background-color: #6f5af8;
+        color: #fff;
+      }
+
+/* footer  */
+.footer{
+    background-color: #6f5af8;
+    padding: 1rem 1rem;
+}
