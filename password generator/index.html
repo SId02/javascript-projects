@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/bulma.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title> Password Generator </title>
+  </head>
+  <body>
+    <nav class="breadcrumb is-centered is-medium" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li class="is-active"><a href="#" aria-current="page">Password Generator</a></li>
+      </ul>
+    </nav>
+    <section class="is-center">
+          <div class="container p-5 ">
+            <div class="columns">
+              <div class="column"></div>
+              <div class="column">  
+                <form class="box form" id="passwordGenerator">
+                  <div class="field is-grouped">
+                    <p class="control is-expanded">
+                      <input class="input displayPassword" id="displayPassword" type="text" placeholder="Password" >
+                    </p>
+                    <p class="control">
+                      <a class="button" id="copyPassword">
+                      <span class="icon is-small is-right">
+                                          <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                          </svg>
+                                      </span>
+                      </a>
+                    </p>  
+                  </div>
+                  <div class="box">
+                    <div class="field">   
+                     <input class="pr-3 mr-6 op-length" id="op-length" step="1" min="8" max="32" value="8" type="number">
+                     <label for="op-length">Password Length</label>
+                 
+                  </div>
+                </div>
+              
+                <div class="box">
+                    <div class="field">
+                      <input class="pr-3 mr-6" checked  id="passLowercase" type="checkbox" name="" > 
+                      <label for="passLowercase">Use Lowercase Characters</label>
+                  </div>
+                </div>
+                <div class="box">
+                    <div class="field">
+                      <input class="pr-3 mr-6" id="passUppercase" type="checkbox" name="" > 
+                      <label for="passUppercase">Use Uppercase Characters</label>
+                  </div>
+                </div>
+                 <div class="box">
+                    <div class="field ">
+                      <input class="pr-3 mr-6" id="passNumber" type="checkbox" name=""> 
+                      <label for="passNumber">Use Numbers</label>
+                  </div>
+                </div>
+                <div class="box">
+                    <div class="field">
+                      <input class="pr-3 mr-6" id="passSymbols" type="checkbox" name=""> 
+                      <label for="passSymbols">Use Special Characters</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="control has-text-centered">
+                    <button class="button is-info" id="submit">Password Generator</button>
+                  </div>
+                </div>
+              </form>
+              </div>
+              <div class="column">
+                <div id="msgDisplay">
+                  <div class="notification is-success is-light">                              
+                      <strong>Password has been copied to clipboard</strong>
+                  </div>
+                </div>
+                  
+              </div>
+            </div>
+          </div>
+    </section>  
+    <script src="./js/script.js"></script>
+  </body>
+</html>

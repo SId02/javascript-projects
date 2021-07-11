@@ -1,0 +1,38 @@
+form {
+  background-color: hsl(0, 0%, 80%) !important;
+}
+.button {
+  background-color: hsl(248, 92%, 66%) !important;
+  color: hsl(0, 0%, 100%) !important;
+}
+
+/* message display  */
+
+#msgDisplay {
+  visibility: hidden;
+}
+#msgDisplay.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
