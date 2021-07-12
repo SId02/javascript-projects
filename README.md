@@ -15,7 +15,7 @@
 - []  Credit Card Validation
 - []  Currency Exchange 
 - [x] Character Limit
-- []  Form Validator
+- [x]  Form Validator
 - [x] Image Generator
 - []  Password Generator
 - []  Product Slider
