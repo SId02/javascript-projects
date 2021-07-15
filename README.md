@@ -17,5 +17,6 @@
 - [x] Character Limit
 - [x]  Form Validator
 - [x] Image Generator
-- []  Password Generator
+- [x]  Password Generator
 - []  Product Slider
+- [x]  Unit Convertor
