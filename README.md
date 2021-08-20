@@ -1,3 +1,5 @@
+
+
 # javascript-projects
 
 
@@ -9,14 +11,19 @@
 [Live](https://sid02.github.io/javascript-projects/)
 
 
-- []  BudgetCalculator
+- [x] Binary to Decimal Convertor
+- [x] Character Limit
 - [x] Comming Soon
 - [x] Counter
-- []  Credit Card Validation
 - []  Currency Exchange 
-- [x] Character Limit
-- [x]  Form Validator
+- [x] Form Validator
 - [x] Image Generator
-- [x]  Password Generator
-- []  Product Slider
-- [x]  Unit Convertor
+- [x] Password Generator
+- []  Quiz App
+- [x] Random Quote's 
+- [x] Random Winner
+- [x] Reverse String
+- [x] Tip Calculator
+- [x] Unit Convertor
+- [x]  Word Counter
+- []
