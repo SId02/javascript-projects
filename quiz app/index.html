@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../css/bulma.css" />
+		<title>Quiz App</title>
+	</head>
+	<body>
+		<nav class="breadcrumb is-centered is-medium" aria-label="breadcrumbs">
+			<ul>
+				<li><a href="../index.html">Home</a></li>
+				<li class="is-active">
+					<a href="#" aria-current="page">Quiz App</a>
+				</li>
+			</ul>
+		</nav>
+		<section class="py-6 section">
+			<div class="container pb-5 has-text-centered">
+				<h1 class="title">Quiz App</h1>
+			</div>
+			<div class="container pt-5">
+				<div class="columns is-multiline is-centered">
+					<div class="column is-10 is-8-desktop">
+						<div class="box quiz-container" id="quiz">
+							<p class="panel-heading" id="question">Questions</p>
+							<div class="panel-block">
+								<input type="radio" name="answer" id="a" class="answer" />
+								<label class="radio p-3 " for="a" id="a_answer">
+								
+								</label>
+							</div>
+							<div class="panel-block">
+								<input type="radio" name="answer" id="b" class="answer" />
+								<label class="radio p-3" for="b" id="b_answer">
+									
+								</label>
+							</div>
+							<div class="panel-block">
+								<input type="radio"name="answer" id="c" class="answer"/>
+								<label class="radio p-3" for="c" id="c_answer">
+									
+								</label>
+							</div>
+							<div class="panel-block">
+								<input type="radio" name="answer" id="d" class="answer" />
+								<label class="radio p-3" for="d" id="d_answer">
+								
+								</label>
+							</div>
+							<div class="panel-block p-3">
+								<button class="button is-link is-outlined" id="submit">Submit</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<script src="./js/script.js"></script>
+	</body>
+</html>
