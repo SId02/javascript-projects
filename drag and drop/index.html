@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="10+ Javascript Projects">
+    <meta name="author" content="10+ Javascript Projects ">
+     <link rel="stylesheet" href="../css/bulma.css">
+    <title>Drag and Drop </title>
+  </head>
+  <body>
+  
+    <nav class="breadcrumb is-centered is-medium" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li class="is-active"><a href="#" aria-current="page">Drag and Drop</a></li>
+      </ul>
+    </nav>
+    <section class="section">
+      <div class="container has-background-grey-lighter">
+        <div class="columns">
+           <div class="column is-4 is-offset-1" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+              <article class="card ls-feature-card">
+                 <div class="card-content">
+                  <img src="./img/user.png" draggable="true" ondragstart="drag(event)" id="drag1" width="100" height="80">
+                 </div>
+              </article>
+           </div>
+           <div class="column is-4 is-offset-1" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+              <article class="card ls-feature-card">
+                 <div class="card-content">
+                 <h1>Drag and Drop</h1>
+                 </div>
+              </article>
+           </div>
+          
+        </div>
+      </div>
+     
+    </section>
+<script src="./js/script.js"></script>
+  </body>
+</html>
+
