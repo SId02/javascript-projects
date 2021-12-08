@@ -14,8 +14,10 @@ function addItem(e) {
 	let li = document.createElement("li");
 	li.className = "card-content";
 	li.appendChild(document.createTextNode(newItem));
+	li.className = "notification is-info is-light";
 	let deleteBtn = document.createElement("button");
 	deleteBtn.className = "delete";
+	
 	deleteBtn.appendChild(document.createTextNode("X"));
 	li.appendChild(deleteBtn);
 	itemList.appendChild(li);
@@ -29,3 +31,5 @@ function removeItem(e){
    
   }
 }
+
+
