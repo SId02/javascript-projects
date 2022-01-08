@@ -1,18 +1,29 @@
-.hero{
-        background: url(../img/hero-circle-backgrond.svg) ;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-.testclr{
-        background-color:#CCCCCC;
-      }
-.btnclr{
-        background-color: #6f5af8;
-        color: #fff;
-      }
+.hero {
+	background: url(../img/hero-circle-backgrond.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.testclr {
+	background-color: #cccccc;
+}
+.btnclr {
+	background-color: #6f5af8;
+	color: #fff;
+}
+.section {
+	padding: 3rem 3rem;
+	background: #eee;
+}
 
+.card-footer {
+	background: #6f5af8;
+	border-top: 1px solid #90b6fd;
+	align-items: stretch;
+	display: flex;
+	color: #fff;
+}
 /* footer  */
-.footer{
-    background-color: #6f5af8;
-    padding: 1rem 1rem;
+.footer {
+	background-color: #6f5af8;
+	padding: 1rem 1rem;
 }
