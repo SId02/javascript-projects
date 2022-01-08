@@ -3,25 +3,25 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-.testclr {
+/* .testclr {
 	background-color: #cccccc;
-}
+} */
 .btnclr {
 	background-color: #6f5af8;
 	color: #fff;
 }
-.section {
+/* .section {
 	padding: 3rem 3rem;
-	background: #eee !important ;
+	background: #eee;
 }
 
-footer .card-footer {
-	background: #6f5af8 !important;
+.card-footer {
+	background: #6f5af8;
 	border-top: 1px solid #90b6fd;
 	align-items: stretch;
 	display: flex;
 	color: #fff;
-}
+} */
 /* footer  */
 .footer {
 	background-color: #6f5af8;
