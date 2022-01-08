@@ -22,6 +22,7 @@
 - [x] Random Quote's
 - [x] Random Winner
 - [x] Reverse String
+- [x] Reverse Integer
 - [x] Tip Calculator
 - [x] ToDo List
 - [x] Toggle Password Visibility
