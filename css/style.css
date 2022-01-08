@@ -12,11 +12,11 @@
 }
 .section {
 	padding: 3rem 3rem;
-	background: #eee;
+	background: #eee !important ;
 }
 
-.card-footer {
-	background: #6f5af8;
+footer .card-footer {
+	background: #6f5af8 !important;
 	border-top: 1px solid #90b6fd;
 	align-items: stretch;
 	display: flex;
