@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bulma.css">
+    <style>
+        .hide{
+      display:none;
+  }
+      </style>
+    <title></title>
+</head>
+<body>
+    <nav class="breadcrumb is-centered is-medium" aria-label="breadcrumbs">
+        <ul>
+           <li><a href="../index.html">Home</a></li>
+           <li class="is-active">
+              <a href="#" aria-current="page">CRUD</a>
+           </li>
+        </ul>
+     </nav>
+     <section class="py-6 section">
+        <div class="container pb-5 has-text-centered">
+           <h1 class="title">CRUD</h1>
+        </div>
+        <div class="container pt-5 has-text-centered">
+            <div class="container-fluid">
+                <table class='table'>
+                    <tr>
+                        <!-- <td> -->
+                            <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                                <td class="field">
+                                    <label  class="label">Full Name <span style="color: #ff0000;" >*</span></label>
+                                    <input class="input" type="text" name="fullName" id="fullName">
+                                </td>
+                                        <td class="field">
+                                    <label  class="label">EMP Code</label>
+                                    <input class="input" type="text" name="empCode" id="empCode">
+                                        </td>
+                                        <td class="field">
+                                    <label  class="label">Salary</label>
+                                    <input  class="input" type="text" name="salary" id="salary">
+                                        </td>
+                                        <td class="field">
+                                    <label  class="label">City</label>
+                                    <input  class="input" type="text" name="city" id="city">
+                                        </td>
+                                    <td  class=" field">
+                                        <label  class="label" style="color: #ffffff;"  >City</label>
+                                        <button  class="button is-link" type="submit" value="Submit"> Submit  </button>
+                                    </td>
+                               
+                            </form>
+                            <span class="validation-error hide " id="fullNameValidationError"  style="color: #ff0000;">* Full Name this field is required.</span>
+                        <!-- </td> -->
+                        <!-- <td>
+                           
+                        </td> -->
+                    </tr>
+                </table>        
+            </div>  
+        </div>
+        </section>
+
+<div class="container  has-text-centered">
+    <div class="row">
+        <div class="columns is-half">
+            <div class="column">
+                <table  class="table" id="employeeList">
+                    <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>EMP Code</th>
+                            <th>Salary</th>
+                            <th>City</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+        <script src="./js/script.js"></script>
+</body>
+</html>
+
+
+
+
