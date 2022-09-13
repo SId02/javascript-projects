@@ -1,3 +1,6 @@
+body{
+	font-family: 'Ubuntu', sans-serif;
+}
 .hero {
 	background: url(../img/hero-circle-backgrond.svg);
 	background-repeat: no-repeat;
