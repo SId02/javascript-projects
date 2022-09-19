@@ -2,7 +2,7 @@ const empty = "";
 const uCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const lCase = "abcdefghijklmnopqrstuvwxyz";
 const number = "0123456789";
-const symbols = "!@#$%^&*=-_><;.";
+const symbols = "!@#$%^&*-_";
 
 let passLength = document.querySelector("#op-length");
 let lowerCase = document.querySelector("#passLowercase");
