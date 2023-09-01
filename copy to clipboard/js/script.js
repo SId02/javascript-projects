@@ -20,10 +20,16 @@ function myFunction() {
   let copyColorCode = document.querySelector("#color-code");
   navigator.clipboard.writeText(copyColorCode.textContent);
   alert("Copied the text: " + copyColorCode.textContent);
+ 
 }
 
 
 
 
 
-
+/*
+ <div class="notification is-link is-light">
+  <button class="delete"></button>
+ <strong>copyColorCode.textContent</strong>
+</div>
+*/
