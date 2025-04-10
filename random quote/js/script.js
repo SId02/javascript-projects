@@ -1,6 +1,3 @@
-// document.querySelector("#generate").addEventListener("click", () => {
-//   generate();
-// });
 
 const quotes = [
   {

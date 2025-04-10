@@ -29,3 +29,8 @@
 - [x] Unit Convertor
 - [x] Word Counter
 - []
+
+
+for resposive for desktop screen and mobile screen and tablet screen same functionality
+    design problem refactor it and add dark mode and light mode black text on a white background (light mode) and white or light gray text on a dark background (dark mode)
+    with latest version of bulma css 1.0.2 https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css 

@@ -7,8 +7,7 @@ function reverseInteger() {
     result.textContent = "Integer must contain at least 3 characters";
   } else {
     let revInteger = integerWord.toString().split('').reverse().join('');
- //   result.textContent = "Your reversed Integer is " + '"' + revInteger + '"';
- result.textContent = `Your reversed Integer is ${revInteger}`;
+        result.textContent = `Your reversed Integer is ${revInteger}`;
   }
 
 }

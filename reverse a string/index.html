@@ -1,57 +1,123 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="stylesheet" href="../css/bulma.css" />
-      <title>Reverse a String</title>
-   </head>
-   <body>
-      <nav class="breadcrumb is-centered is-medium" aria-label="breadcrumbs">
-         <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li class="is-active">
-               <a href="#" aria-current="page">Reverse a String</a>
-            </li>
-         </ul>
-      </nav>
-      <section class="py-6 section">
-         <div class="container pb-5 has-text-centered">
-            <!-- <h1 class="title">Binary to Decimal Converter</h1> -->
-         </div>
-         <div class="container pt-5 has-text-centered">
-            <div class="columns is-multiline is-centered">
-               <div class="column is-10 is-10-desktop">
-<div class="field is-horizontal">
-  <div class="field-body">
-    <div class="field">
-      <div class="control">
-        <input class="input string" type="text" placeholder="Please Enter Your String " pattern="/^[a-zA-Z]$/">
-      </div>
-    </div>
-  </div>
-</div>
-<div class="p-6 field is-horizontal">
-  <div class="field-body">
-    <div class="field">
-      <div class="control">
-        <button class="button is-primary" id="convert">
-          CONVERT
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-                 <div class="tile is-ancestor has-text-centered">
-        <div class="tile is-parent is-10 ">
-          <p class=" is-size-3 has-text-grey-darker" id="reverseString"></p>
-        </div>
-        </div>
-               </div>       
-            </div>
-         </div>       
-      </section>
-      <script src="./js/script.js"></script>
-   </body>
-</html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/bulma.css" />
+    <title>Reverse String/Integer</title>
+    <style>
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
 
+        body.dark-mode .title,
+        body.dark-mode .subtitle,
+        body.dark-mode .has-text-grey-darker {
+            color: #e0e0e0 !important;
+        }
+
+        body.dark-mode .input,
+        body.dark-mode .button {
+            background-color: #333;
+            color: #e0e0e0;
+            border-color: #555;
+        }
+
+        body.dark-mode .input:focus,
+        body.dark-mode .button:focus {
+            border-color: #888;
+            box-shadow: 0 0 0 0.125em rgba(179, 179, 179, 0.25);
+        }
+
+        body.dark-mode .breadcrumb a {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .breadcrumb li.is-active a {
+            color: #bbb;
+        }
+
+        .toggle-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="toggle-container">
+        <button class="button" id="darkModeToggle">Toggle Dark Mode</button>
+    </div>
+    <nav class="breadcrumb is-centered is-medium" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li class="is-active">
+                <a href="#" aria-current="page">Reverse String/Integer</a>
+            </li>
+        </ul>
+    </nav>
+    <section class="py-6 section">
+        <div class="container pb-5 has-text-centered">
+            <h1 class="title">Reverse String/Integer</h1>
+        </div>
+        <div class="container pt-5 has-text-centered">
+            <div class="columns is-multiline is-centered">
+                <div class="column is-10 is-10-desktop">
+                    <div class="field is-horizontal">
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input string" type="text" placeholder="Enter String" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 field is-horizontal">
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <button class="button is-primary" id="reverseStringButton">
+                                        Reverse String
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tile is-ancestor has-text-centered">
+                        <div class="tile is-parent is-10">
+                            <p class="is-size-3 has-text-grey-darker" id="reverseStringResult"></p>
+                        </div>
+                    </div>
+                    <div class="field is-horizontal">
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input integer" type="number" placeholder="Enter Integer" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 field is-horizontal">
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <button class="button is-primary" id="reverseIntegerButton">
+                                        Reverse Integer
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tile is-ancestor has-text-centered">
+                        <div class="tile is-parent is-10">
+                            <p class="is-size-3 has-text-grey-darker" id="reverseIntegerResult"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./js/script.js"></script>
+</body>
+</html>

@@ -1,90 +1,139 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../css/bulma.css">
-  <title>Year Calculator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/bulma.css">
+    <title>Year Calculator</title>
+    <style>
+        body {
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .box.dark-mode {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+        }
+
+        .input.dark-mode {
+            background-color: #303030;
+            color: #e0e0e0;
+            border-color: #555;
+        }
+
+        .input.dark-mode::placeholder {
+            color: #aaa;
+        }
+
+        .button.dark-mode.is-link {
+            background-color: #4a148c;
+            color: white;
+        }
+
+        .button.dark-mode.is-link:hover {
+            background-color: #6a1b9a;
+        }
+        body {
+            background-color: white;
+            color: black;
+        }
+
+        .box {
+            background-color: white;
+            color: black;
+        }
+
+        .input {
+            background-color: white;
+            color: black;
+            border-color: #ccc;
+        }
+
+        .input::placeholder {
+            color: #999;
+        }
+
+        .button.is-link {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .button.is-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 
 <body>
-  <nav class="breadcrumb is-centered is-medium" aria-label="breadcrumbs">
-    <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li class="is-active"><a href="#" aria-current="page"> Year Calculator</a></li>
-    </ul>
-  </nav>
-  <section class="py-6 section">
-    <div class="container pb-5 has-text-centered">
-      <h1 class="title ">
-       Year Calculator
-      </h1>
-    </div>
-    <div class="container pt-5 is-horizontal">
-      <div class="columns is-multiline is-centered ">
-
-        <div class="column is-5 is-8-desktop   ">
-          <form class="box  ">
-            <div class="columns">
-              <div class="column">
-                <div class="field">
-                  <label for="weight" class="label">Enter in Day</label>
-                  <div class="control">
-                    <input class="input is-medium" name="date"
-                    id="date"
-                    placeholder="DD"
-                    required="required"
-                    minlength="1"
-                    maxlength="2">
-                  </div>
-                </div>
-              </div>
-              <div class="column">
-                <div class="field">
-                  <label for="height" class="label">Enter in Month</label>
-                  <div class="control">
-                    <input class="input is-medium "name="month"
-                    id="month"
-                    placeholder="MM"
-                    required="required"
-                    minlength="1"
-                    maxlength="2" >
-                  </div>
-                </div>
-              </div>
-              
-              <div class="column">
-                <div class="field">
-                  <label for="weight" class="label">Enter in Year</label>
-                  <div class="control">
-                    <input class="input is-medium"name="year"
-                    id="year"
-                    placeholder="YYYY"
-                    required="required"
-                    minlength="4"
-                    maxlength="4" >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="column">
-              <div class="field">
-                <div class="control has-text-centered">
-                  <button class="button is-link calculate"  type="button" name="submit" value="Submit" onclick="age()">Calculate</button>
-                </div>
-              </div>
-            </div>
-            <div id="age" class="text-center">
-            </div>
-          </form>
+    <nav class="breadcrumb is-centered is-medium" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Year Calculator</a></li>
+        </ul>
+    </nav>
+    <section class="py-6 section">
+        <div class="container pb-5 has-text-centered">
+            <h1 class="title">
+                Year Calculator
+            </h1>
         </div>
+        <div class="container pt-5 is-horizontal">
+            <div class="columns is-multiline is-centered">
+                <div class="column is-5 is-8-desktop">
+                    <form class="box">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field">
+                                    <label for="date" class="label">Enter in Day</label>
+                                    <div class="control">
+                                        <input class="input is-medium" name="date" id="date" placeholder="DD"
+                                            required="required" minlength="1" maxlength="2">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="field">
+                                    <label for="month" class="label">Enter in Month</label>
+                                    <div class="control">
+                                        <input class="input is-medium" name="month" id="month" placeholder="MM"
+                                            required="required" minlength="1" maxlength="2">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="field">
+                                    <label for="year" class="label">Enter in Year</label>
+                                    <div class="control">
+                                        <input class="input is-medium" name="year" id="year" placeholder="YYYY"
+                                            required="required" minlength="4" maxlength="4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="field">
+                                <div class="control has-text-centered">
+                                    <button class="button is-link calculate" type="button" name="submit" value="Submit"
+                                        onclick="age()">Calculate</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="age" class="has-text-centered"></div>
+                    </form>
+                    <div class="field has-text-centered mt-4">
+                        <button class="button" id="darkModeToggle">Toggle Dark Mode</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      </div>
-    </div>
-  </section>
-
-  <script src="./js/script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

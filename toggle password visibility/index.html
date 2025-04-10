@@ -1,67 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="10+ Javascript Projects">
     <meta name="author" content="10+ Javascript Projects ">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <link rel="stylesheet" href="../css/bulma.css">
-    <title>Toggle Password Visibility </title>
-  </head>
-  <body>
-   <!--  -->
+    <title>Toggle Password Visibility</title>
+    <style>
+        body.light-mode {
+            background-color: #f5f5f5;
+            color: #363636;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #f5f5f5;
+        }
+
+        .light-mode .box {
+            background-color: #fff;
+            color: #363636;
+        }
+
+        .dark-mode .box {
+            background-color: #282828;
+            color: #f5f5f5;
+        }
+
+        .light-mode .input, .light-mode .label {
+            color: #363636;
+        }
+
+        .dark-mode .input, .dark-mode .label {
+            color: #f5f5f5;
+        }
+
+        .light-mode .button.is-link {
+            background-color: #3273dc;
+            color: #fff;
+        }
+
+        .dark-mode .button.is-link {
+            background-color: #93c5fd;
+            color: #282828;
+        }
+    </style>
+</head>
+<body class="light-mode">
 <nav class="breadcrumb is-centered is-medium" aria-label="breadcrumbs">
-  <ul>
-    <li><a href="../index.html">Home</a></li>
-     <li class="is-active"><a href="#" aria-current="page">Toggle Password Visibility</a></li>
-  </ul>
+    <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li class="is-active"><a href="#" aria-current="page">Toggle Password Visibility</a></li>
+    </ul>
 </nav>
-<!--  -->
-
 <section class="section">
-  <div class="container">
-    <h1 class="title has-text-centered">
-   Form Validation   
-    </h1>
-  </div>
-<!--  -->
-
-<!--  -->
-  <hr>
+    <div class="container">
+        <h1 class="title has-text-centered">
+            Toggle Password Visibility
+        </h1>
+    </div>
+    <hr>
     <section class="section">
-          <div class="container">
-              <div class="columns is-mobile">
-                  <div class="column is-half is-offset-one-quarter">
-                      <div class="field">
-                          <label class="label">Email</label>
-                          <div class="control">
-                              <input class="input email" type="email" placeholder="Enter Your Email ID">
-                          </div>
-                      </div>
-                      <div class="field">
+        <div class="container">
+            <div class="columns is-mobile">
+                <div class="column is-half is-offset-one-quarter box">
+                    <div class="field">
                         <label class="label" for="password">Password</label>
                         <div class="control has-icons-right">
-                            <input class="input name" type="password" name="password" id="password" placeholder="Enter Your  Password ">
-                            <span class="icon is-small is-right " >
-                            
-                              <i class="fas fa-eye-slash"  id="togglePassword"></i>
+                            <input class="input name" type="password" name="password" id="password"
+                                   placeholder="Enter Your  Password ">
+                            <span class="icon is-small is-right">
+                                <i class="fas fa-eye-slash" id="togglePassword"></i>
                             </span>
                         </div>
-                    
                     </div>
-                      <div class="field">
-                          <div class="control">
-                              <button class="button is-link btnSubmit">Submit</button>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
+                    <div class="field">
+                        <div class="control">
+                            <button class="button is-link btnSubmit">Submit</button>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <button class="button" id="toggleMode">Toggle Mode</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </section>
-<!-- <script src="https://unpkg.com/feather-icons"></script> -->
 <script src="./js/script.js"></script>
-  </body>
+</body>
 </html>

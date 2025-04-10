@@ -1,74 +1,127 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+ <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/bulma.css">
-
-     <title>Word Counter</title>
-  </head>
-  <body class="">
-
+            <title>Word Counter</title>
+            <style>
+                body.light-mode {
+                    background-color: #f5f5f5;
+                    color: #363636;
+                }
+        
+                body.dark-mode {
+                    background-color: #121212;
+                    color: #f5f5f5;
+                }
+        
+                .light-mode .box {
+                    background-color: #fff;
+                    color: #363636;
+                }
+        
+                .dark-mode .box {
+                    background-color: #282828;
+                    color: #f5f5f5;
+                }
+        
+                .light-mode .has-background-link-light {
+                    background-color: #e0f2fe;
+                }
+        
+                .dark-mode .has-background-link-light {
+                    background-color: #1e3a8a;
+                }
+        
+                .light-mode .has-background-warning-light {
+                    background-color: #fff8dc;
+                }
+        
+                .dark-mode .has-background-warning-light {
+                    background-color: #594f29;
+                }
+        
+                .light-mode .has-background-info-light {
+                    background-color: #e0f7fa;
+                }
+        
+                .dark-mode .has-background-info-light {
+                    background-color: #2a4e53;
+                }
+        
+                .light-mode .textarea {
+                    background-color: #fff;
+                    color: #363636;
+                }
+        
+                .dark-mode .textarea {
+                    background-color: #282828;
+                    color: #f5f5f5;
+                }
+                .light-mode .button.is-info.is-outlined{
+                    color: #209CEE;
+                }
+                .dark-mode .button.is-info.is-outlined{
+                    color: #93c5fd;
+                }
+            </style>
+        </head>
+        <body class="light-mode">
             <nav class="breadcrumb is-centered is-medium" aria-label="breadcrumbs">
-              <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li class="is-active"><a href="#" aria-current="page"> Word Counter</a></li>
-              </ul>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="is-active"><a href="#" aria-current="page">Word Counter</a></li>
+                </ul>
             </nav>
-            <section class="section py-6 has-background-grey-lighter">
-                    <div class="container has-text-centered pb-5">
-                        <h1 class="title ">
-                       Word Counter
-                        </h1>
-                    </div>
-                    <div class="container">
-                      <!--  -->
-                      <nav class="level">
-                        <div class="level-item has-text-centered p-2 ">
-                          <div class="tile is-child box has-background-link-light" >
-                            <p class="heading is-underlined" >Characters</p>
-                            <p class="title" id="character">0</p>
-                          </div>
+            <section class="section py-6">
+                <div class="container has-text-centered pb-5">
+                    <h1 class="title">Word Counter</h1>
+                </div>
+                <div class="container">
+                    <nav class="level">
+                        <div class="level-item has-text-centered p-2">
+                            <div class="tile is-child box has-background-link-light">
+                                <p class="heading is-underlined">Characters</p>
+                                <p class="title" id="character">0</p>
+                            </div>
                         </div>
-                        <div class="level-item has-text-centered p-2 ">
-                          <div class="tile is-child box has-background-warning-light">
-                            <p class="heading is-underlined " >Words</p>
-                            <p class="title" id="word">0</p>
-                          </div>
+                        <div class="level-item has-text-centered p-2">
+                            <div class="tile is-child box has-background-warning-light">
+                                <p class="heading is-underlined">Words</p>
+                                <p class="title" id="word">0</p>
+                            </div>
                         </div>
-                        <div class="level-item has-text-centered p-2 ">
-                          <div class="tile is-child box has-background-info-light">
-                            <p class="heading is-underlined" >Reading time</p>
-                            <p class="title" id="readingTime">0</p>
-                          </div>
+                        <div class="level-item has-text-centered p-2">
+                            <div class="tile is-child box has-background-info-light">
+                                <p class="heading is-underlined">Reading time</p>
+                                <p class="title" id="readingTime">0</p>
+                            </div>
                         </div>
                     </nav>
-                      <!--  -->
-                    </div>
-                    
-                   <div class="container  pt-5">
-                        <form class="box">
-                              <div class="field">
-                                  <div class="control">
-                                      <textarea class="textarea has-fixed-size content" placeholder = "Type your text"></textarea>
-                                  </div>
-                              </div>
-                        </form>
-                        <!--  -->
-                        <div class="field is-grouped is-justify-content-space-evenly">
-                              <p class="control">
-                                <a class="button is-rounded is-info is-outlined" id="reset">
+                </div>
+                <div class="container pt-5">
+                    <form class="box">
+                        <div class="field">
+                            <div class="control">
+                                <textarea class="textarea has-fixed-size content" placeholder="Type your text"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="field is-grouped is-justify-content-space-evenly">
+                        <p class="control">
+                            <a class="button is-rounded is-info is-outlined" id="reset">
                                 Reset
-                                </a>
-                              </p>
-                        
-                      </div>
-                        <!--  -->
-                   </div>
+                            </a>
+                        </p>
+                        <p class="control">
+                            <a class="button is-rounded" id="toggleMode">
+                                Toggle Mode
+                            </a>
+                        </p>
+                    </div>
+                </div>
             </section>
-<script src="./js/script.js"></script>
-  </body>
-</html>
-
-
-       
+            <script src="./js/script.js"></script>
+        </body>
+        </html>      

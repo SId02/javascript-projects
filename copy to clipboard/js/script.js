@@ -9,13 +9,9 @@ document.querySelector("#button").addEventListener("click", () => {
   color.textContent = hexColor;
   document.body.style.backgroundColor = hexColor;
 });
-
 function getRandomNumber() {
   return Math.floor(Math.random() * hex.length);
 }
-
-
-
 function myFunction() {
   let copyColorCode = document.querySelector("#color-code");
   navigator.clipboard.writeText(copyColorCode.textContent);
@@ -23,13 +19,3 @@ function myFunction() {
  
 }
 
-
-
-
-
-/*
- <div class="notification is-link is-light">
-  <button class="delete"></button>
- <strong>copyColorCode.textContent</strong>
-</div>
-*/

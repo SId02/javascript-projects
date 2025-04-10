@@ -1,76 +1,32 @@
-
-// let submit = document.querySelector("#submit");
-// let password = document.querySelector("#displayPassword");
+const displayPassword = document.getElementById("displayPassword");
+const copyPassword = document.getElementById("copyPassword");
+const submit = document.getElementById("submit");
+const msgDisplay = document.getElementById("msgDisplay");
+const darkModeToggle = document.getElementById("darkModeToggle");
 
 const generateOTP = () => {
-  const digit = "0123456789";
-  let otp = "";
-  for (let i = 0; i < 4; i++) {
-    otp += digit[Math.floor(Math.random() * 10)];
-  }
-  return `${<p class="control is-expanded">
-    <input class="input displayPassword" id="displayPassword" type="text" placeholder="OTP (One Time Password)" />
-  </p>
-
-    }`;
+    const digit = "0123456789";
+    let otp = "";
+    for (let i = 0; i < 4; i++) {
+        otp += digit[Math.floor(Math.random() * 10)];
+    }
+    displayPassword.value = otp;
 };
-generateOTP();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-submit.addEventListener("click", (e) => {
-  e.preventDefault();
-  let initialPassword = empty;
-  upperCase.checked ? (initialPassword += uCase) : "";
-  lowerCase.checked ? (initialPassword += lCase) : "";
-  passNumber.checked ? (initialPassword += number) : "";
-  passSymbols.checked ? (initialPassword += symbols) : "";
-
-  password.value = generatePassword(passLength.value, initialPassword);
+submit.addEventListener("click", (event) => {
+    event.preventDefault();
+    generateOTP();
 });
 
-function generatePassword(l, initialPassword) {
-  let pass = "";
-  for (let i = 0; i < l; i++) {
-    pass += initialPassword.charAt(
-      Math.floor(Math.random() * initialPassword.length)
-    );
-  }
-  return pass;
-}
-
-// 
-function notification() {
-  let value = document.querySelector("#msgDisplay");
-  value.className = "show";
-  setTimeout(function () {
-    value.className = value.class.replace("show", "");
-  }, 3000);
-}
-// 
-const copy = document.querySelector("#copyPassword");
-
-copy.addEventListener("click", (e) => {
-   e.preventDefault();
-  if (password.value == "") {
-  } else {
-    password.select();
+copyPassword.addEventListener("click", () => {
+    displayPassword.select();
     document.execCommand("copy");
-    notification();
-  }
+    msgDisplay.classList.add("show");
+    setTimeout(() => {
+        msgDisplay.classList.remove("show");
+    }, 3000);
 });
 
+darkModeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+});

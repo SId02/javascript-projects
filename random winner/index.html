@@ -1,128 +1,167 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="../css/bulma.css">
-      <title>Random Winner</title>
-   </head>
-   <body>
-      <nav class="breadcrumb is-centered is-medium" aria-label="breadcrumbs">
-         <ul>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/bulma.css">
+    <title>Random Winner</title>
+    <style>
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .card,
+        body.dark-mode .button {
+            background-color: #333;
+            color: #e0e0e0;
+            border-color: #555;
+        }
+
+        body.dark-mode .button:focus {
+            border-color: #888;
+            box-shadow: 0 0 0 0.125em rgba(179, 179, 179, 0.25);
+        }
+
+        body.dark-mode .breadcrumb a {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .breadcrumb li.is-active a {
+            color: #bbb;
+        }
+
+        body.dark-mode .title,
+        body.dark-mode .subtitle {
+            color: #e0e0e0 !important;
+        }
+        
+        .toggle-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="toggle-container">
+        <button class="button" id="darkModeToggle">Toggle Dark Mode</button>
+    </div>
+    <nav class="breadcrumb is-centered is-medium" aria-label="breadcrumbs">
+        <ul>
             <li><a href="../index.html">Home</a></li>
             <li class="is-active"><a href="#" aria-current="page">Random Winner</a></li>
-         </ul>
-      </nav>
-      <section class="py-6 section">
-         <div class="container pb-5 has-text-centered">
-            <h1 class="title ">
-               Random Winner
-            </h1>
-         </div>
-         <div class="container pt-5 has-text-centered">
+        </ul>
+    </nav>
+    <section class="py-6 section">
+        <div class="container pb-5 has-text-centered">
+            <h1 class="title">Random Winner</h1>
+        </div>
+        <div class="container pt-5 has-text-centered">
             <div class="columns is-multiline is-centered">
-               <div class="column is-4 is-4-desktop">
-                  <div class="card">
-                     <div class="card-image">
-                        <figure class="image is-5by4">
-                           <img  class="winner-one-img" src="./img/user.png" alt="Placeholder image">
-                        </figure>
-                     </div>
-                     <div class="card-content">
-                        <div class="content">
-                           <div class="level">
-                              <div class="level-item has-text-centered">
-                                 <div>
-                                    <p class="title"> 1<sup>st</sup> Winner</p>
-                                 </div>
-                              </div>
-                           </div>
-                           <hr>
-                           <div class="level">
-                              <div class="level-item has-text-centered">
-                                 <div>
-                                    <p class="title winner-one">888</p>
-                                 </div>
-                              </div>
-                           </div>
+                <div class="column is-4 is-4-desktop">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-5by4">
+                                <img class="winner-one-img" src="./img/user.png" alt="1st Winner">
+                            </figure>
                         </div>
-                        <div class="card">
-                           <footer class="card-footer">
-                              <button class="button is-dark card-footer-item" onclick="winner(1)">Winner</button>     
-                           </footer>
+                        <div class="card-content">
+                            <div class="content">
+                                <div class="level">
+                                    <div class="level-item has-text-centered">
+                                        <div>
+                                            <p class="title">1<sup>st</sup> Winner</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="level">
+                                    <div class="level-item has-text-centered">
+                                        <div>
+                                            <p class="title winner-one">888</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <footer class="card-footer">
+                                    <button class="button is-dark card-footer-item" onclick="winner(1)">Winner</button>
+                                </footer>
+                            </div>
                         </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="column is-4 is-4-desktop">
-                  <div class="card">
-                     <div class="card-image">
-                        <figure class="image is-5by4">
-                           <img  class="winner-two-img" src="./img/user.png" alt="Placeholder image">
-                        </figure>
-                     </div>
-                     <div class="card-content">
-                        <div class="content">
-                           <div class="level">
-                              <div class="level-item has-text-centered">
-                                 <div>
-                                    <p class="title">2<sup>nd</sup> Winner</p>
-                                 </div>
-                              </div>
-                           </div>
-                           <hr>
-                           <div class="level">
-                              <div class="level-item has-text-centered">
-                                 <div>
-                                    <p class="title winner-two">888</p>
-                                 </div>
-                              </div>
-                           </div>
+                    </div>
+                </div>
+                <div class="column is-4 is-4-desktop">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-5by4">
+                                <img class="winner-two-img" src="./img/user.png" alt="2nd Winner">
+                            </figure>
                         </div>
-                        <div class="card">
-                           <footer class="card-footer">
-                              <button class="button is-dark card-footer-item"onclick="winner(2)">Winner</button>     
-                           </footer>
+                        <div class="card-content">
+                            <div class="content">
+                                <div class="level">
+                                    <div class="level-item has-text-centered">
+                                        <div>
+                                            <p class="title">2<sup>nd</sup> Winner</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="level">
+                                    <div class="level-item has-text-centered">
+                                        <div>
+                                            <p class="title winner-two">888</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <footer class="card-footer">
+                                    <button class="button is-dark card-footer-item" onclick="winner(2)">Winner</button>
+                                </footer>
+                            </div>
                         </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="column is-4 is-4-desktop">
-                  <div class="card">
-                     <div class="card-image">
-                        <figure class="image is-5by4">
-                           <img class="winner-three-img" src="./img/user.png" alt="Placeholder image">
-                        </figure>
-                     </div>
-                     <div class="card-content">
-                        <div class="content">
-                           <div class="level">
-                              <div class="level-item has-text-centered">
-                                 <div>
-                                    <p class="title">3<sup>rd</sup> Winner</p>
-                                 </div>
-                              </div>
-                           </div>
-                           <hr>
-                           <div class="level">
-                              <div class="level-item has-text-centered">
-                                 <div>
-                                    <p class="title winner-three">888</p>
-                                 </div>
-                              </div>
-                           </div>
+                    </div>
+                </div>
+                <div class="column is-4 is-4-desktop">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-5by4">
+                                <img class="winner-three-img" src="./img/user.png" alt="3rd Winner">
+                            </figure>
                         </div>
-                        <div class="card">
-                           <footer class="card-footer">
-                              <button class="button is-dark card-footer-item" onclick="winner(3)">Winner</button>     
-                           </footer>
+                        <div class="card-content">
+                            <div class="content">
+                                <div class="level">
+                                    <div class="level-item has-text-centered">
+                                        <div>
+                                            <p class="title">3<sup>rd</sup> Winner</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="level">
+                                    <div class="level-item has-text-centered">
+                                        <div>
+                                            <p class="title winner-three">888</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <footer class="card-footer">
+                                    <button class="button is-dark card-footer-item" onclick="winner(3)">Winner</button>
+                                </footer>
+                            </div>
                         </div>
-                     </div>
-                  </div>
-               </div>
+                    </div>
+                </div>
             </div>
-         </div>
-      </section>
-      <script src="./js/script.js"></script>
-   </body>
+        </div>
+    </section>
+    <script src="./js/script.js"></script>
+</body>
 </html>
+

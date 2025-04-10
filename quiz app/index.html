@@ -1,62 +1,96 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="../css/bulma.css" />
-		<title>Quiz App</title>
-	</head>
-	<body>
-		<nav class="breadcrumb is-centered is-medium" aria-label="breadcrumbs">
-			<ul>
-				<li><a href="../index.html">Home</a></li>
-				<li class="is-active">
-					<a href="#" aria-current="page">Quiz App</a>
-				</li>
-			</ul>
-		</nav>
-		<section class="py-6 section">
-			<div class="container pb-5 has-text-centered">
-				<h1 class="title">Quiz App</h1>
-			</div>
-			<div class="container pt-5">
-				<div class="columns is-multiline is-centered">
-					<div class="column is-10 is-8-desktop">
-						<div class="box quiz-container" id="quiz">
-							<p class="panel-heading" id="question">Questions</p>
-							<div class="panel-block">
-								<input type="radio" name="answer" id="a" class="answer" />
-								<label class="radio p-3 " for="a" id="a_answer">
-								
-								</label>
-							</div>
-							<div class="panel-block">
-								<input type="radio" name="answer" id="b" class="answer" />
-								<label class="radio p-3" for="b" id="b_answer">
-									
-								</label>
-							</div>
-							<div class="panel-block">
-								<input type="radio"name="answer" id="c" class="answer"/>
-								<label class="radio p-3" for="c" id="c_answer">
-									
-								</label>
-							</div>
-							<div class="panel-block">
-								<input type="radio" name="answer" id="d" class="answer" />
-								<label class="radio p-3" for="d" id="d_answer">
-								
-								</label>
-							</div>
-							<div class="panel-block p-3">
-								<button class="button is-link is-outlined" id="submit">Submit</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/bulma.css" />
+    <title>Quiz App</title>
+    <style>
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
 
-		<script src="./js/script.js"></script>
-	</body>
+        body.dark-mode .box,
+        body.dark-mode .button,
+        body.dark-mode .panel-heading,
+        body.dark-mode .panel-block,
+        body.dark-mode label {
+            background-color: #333;
+            color: #e0e0e0;
+            border-color: #555;
+        }
+
+        body.dark-mode .button:focus {
+            border-color: #888;
+            box-shadow: 0 0 0 0.125em rgba(179, 179, 179, 0.25);
+        }
+
+        body.dark-mode .breadcrumb a {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .breadcrumb li.is-active a {
+            color: #bbb;
+        }
+
+        body.dark-mode .title,
+        body.dark-mode .subtitle {
+            color: #e0e0e0 !important;
+        }
+
+        .toggle-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="toggle-container">
+        <button class="button" id="darkModeToggle">Toggle Dark Mode</button>
+    </div>
+    <nav class="breadcrumb is-centered is-medium" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li class="is-active">
+                <a href="#" aria-current="page">Quiz App</a>
+            </li>
+        </ul>
+    </nav>
+    <section class="py-6 section">
+        <div class="container pb-5 has-text-centered">
+            <h1 class="title">Quiz App</h1>
+        </div>
+        <div class="container pt-5">
+            <div class="columns is-multiline is-centered">
+                <div class="column is-10 is-8-desktop">
+                    <div class="box quiz-container" id="quiz">
+                        <p class="panel-heading" id="question">Questions</p>
+                        <div class="panel-block">
+                            <input type="radio" name="answer" id="a" class="answer" />
+                            <label class="radio p-3" for="a" id="a_answer"></label>
+                        </div>
+                        <div class="panel-block">
+                            <input type="radio" name="answer" id="b" class="answer" />
+                            <label class="radio p-3" for="b" id="b_answer"></label>
+                        </div>
+                        <div class="panel-block">
+                            <input type="radio" name="answer" id="c" class="answer" />
+                            <label class="radio p-3" for="c" id="c_answer"></label>
+                        </div>
+                        <div class="panel-block">
+                            <input type="radio" name="answer" id="d" class="answer" />
+                            <label class="radio p-3" for="d" id="d_answer"></label>
+                        </div>
+                        <div class="panel-block p-3">
+                            <button class="button is-link is-outlined" id="submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./js/script.js"></script>
+</body>
 </html>

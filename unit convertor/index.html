@@ -1,279 +1,349 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/bulma.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-     <title>Unit Convertor</title>
-  </head>
-  <body>
-            <nav class="breadcrumb is-centered is-medium" aria-label="breadcrumbs">
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li class="is-active"><a href="../unit convertor/index.html" aria-current="page">Unit Convertor</a></li>
-            </ul>
-            </nav>
-            <section class="py-6 section">
-                    <div class="container pb-5 has-text-centered">
-                            <h1 class="title ">
-                                Unit Convertor
-                            </h1>
-                    </div>
-                    <div class="container pt-5 has-text-centered">
-                         <div class="tabs is-fullwidth">
-                                <ul>
-                                    <li>
-                                        <a>
-                                             <span class="icon-text" onclick="UnitConverters('Length')">
-                                                    <span> Length</span>
-                                                    <span class="icon">
-                                                        <i class="fas fa-ruler-horizontal"></i>
-                                                    </span>
-                                            </span> 
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a>
-                                             <span class="icon-text" onclick="UnitConverters('Weight')">
-                                                    <span> Weight</span>
-                                                    <span class="icon">
-                                                        <i class="fas fa-balance-scale"></i>
-                                                    </span>
-                                            </span> 
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a>
-                                             <span class="icon-text" onclick="UnitConverters('Speed')">
-                                                    <span>Speed</span>
-                                                    <span class="icon">
-                                                        <i class="fas fa-tachometer-alt"></i>
-                                                    </span>
-                                            </span> 
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a>
-                                            <span class="icon-text" onclick="UnitConverters('Temperature')">
-                                                    <span>Temperature</span>
-                                                    <span class="icon">
-                                                         <i class="fas fa-temperature-low"></i>
-                                                    </span>
-                                            </span> 
-                                        </a>
-                                    </li>
-                            </ul>
-                        </div>
-                   </div>
-            </section>
+    <title>Unit Convertor</title>
+    <style>
+        body.light-mode {
+            background-color: #f5f5f5;
+            color: #363636;
+        }
 
-        
-            <section class="section">
-                  <!-- Length -->
-                <div class="container unitName" id="Length">
-                        <div class="notification is-link is-light">
-                            <strong>
-                                  <span class="icon-text">
-                                    <span>  Length Converter</span>
-                                    <span class="icon">
-                                         <i class="fas fa-ruler-horizontal"></i>
-                                    </span>
-                                </span>
-                        </div>
-                        <button class="button is-link is-rounded" onclick="clearLength()" value="clear">
-                              <span class="icon">
-                                    <i class="fas fa-redo"></i>
-                                </span>
-                             <span>Reset</span>
-                        </button>
-                    <section class="p-6">
-                         <div class="columns is-mobile is-2 is-half">
-                                <div class="column">
-                                    <div class="field">
-                                            <label for="ipFeet" class="label is-medium">Feet</label>
-                                            <div class="control">
-                                                <input class="input is-medium" id="ipFeet" type="number" placeholder="Feet"
-                                                 oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
-                                            </div>
-                                    </div>
-                                    <div class="field">
-                                            <label for="ipMeters" class="label is-medium">Meters</label>
-                                            <div class="control">
-                                                <input class="input is-medium" type="number"  id="ipMeters" placeholder="Meters"
-            oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
-                                            </div>
-                                    </div>
-                                </div>
-                                <div class="column">
-                                    <div class="field">
-                                            <label for="ipInches" class="label is-medium">Inches</label>
-                                            <div class="control">
-                                                <input class="input is-medium" type="number" id="ipInches" placeholder="Inches"
-            oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
-                                            </div>
-                                    </div>
-                                    <div class="field">
-                                            <label for="ipKilometers" class="label is-medium">Kilometers</label>
-                                            <div class="control">
-                                                <input class="input is-medium" type="number" id="ipKilometers" placeholder="Kilometers"
-            oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
-                                            </div>
-                                    </div>
-                                </div>  
-                            </div>
-                    </section>
-                </div>
-                 <!-- Length Ends -->
-                 
-                <!-- Speed -->
-                <div class="container unitName" id="Speed" style="display:none;">
-                        <div class="notification is-dark is-light">
-                            <strong> 
-                                 <span class="icon-text">
-                                    <span> Speed Converter </span>
-                                    <span class="icon">
-                                         <i class="fas fa-tachometer-alt"></i>
-                                    </span>
-                                </span>  
-                               </strong>
-                        </div>
-                        <button class="button is-dark is-rounded" onclick="clearSpeed()" value="clear">
-                             <span class="icon">
-                                    <i class="fas fa-redo"></i>
-                                </span>
-                                <span>Reset</span>
-                        </button>
-                    <section class="p-6">
-                        <div class="columns is-mobile is-2 is-half">
-                                <div class="column">
-                                    <div class="field">
-                                            <label for="ipMPH" class="label is-medium">MPH</label>
-                                            <div class="control">
-                                                <input class="input is-medium" id="ipMPH" placeholder="MPH"
-                                    oninput="speedConverter(this.id,this.value)" onchange="speedConverter(this.id,this.value)">
-                                            </div>
-                                    </div>
-                                    <div class="field">
-                                            <label for="ipKPH" class="label is-medium">KPH</label>
-                                            <div class="control">
-                                                <input class="input is-medium" type="number"  id="ipKPH" placeholder="KPH"
-            oninput="speedConverter(this.id,this.value)" onchange="speedConverter(this.id,this.value)">
-                                            </div>
-                                    </div>
-                                </div>
-                                <div class="column"></div>  
-                        </div>
-                    </section>
-                </div>
-                <!-- Speed Ends -->
-                <!-- Temperature -->
-                <div class="container unitName" id="Temperature" style="display:none;" >
-                        <div class="notification is-danger is-light">
-                                <strong>
-                                <span class="icon-text">
-                                    <span> Temperature Converter</span>
-                                    <span class="icon">
-                                         <i class="fas fa-temperature-low"></i>
-                                    </span>
-                                </span> 
-                            </strong>   
-                        </div>
-                        <button class="button is-link is-rounded is-danger" onclick="clearTemperature()" value="clear">
-                             <span class="icon">
-                                 <i class="fas fa-redo"></i>
+        body.dark-mode {
+            background-color: #121212;
+            color: #f5f5f5;
+        }
+
+        .light-mode .box, .light-mode .notification {
+            background-color: #fff;
+            color: #363636;
+        }
+
+        .dark-mode .box, .dark-mode .notification {
+            background-color: #282828;
+            color: #f5f5f5;
+        }
+
+        .light-mode .input {
+            background-color: #fff;
+            color: #363636;
+        }
+
+        .dark-mode .input {
+            background-color: #282828;
+            color: #f5f5f5;
+        }
+
+        .light-mode .button.is-link.is-rounded, .light-mode .button.is-dark.is-rounded, .light-mode .button.is-danger.is-rounded, .light-mode .button.is-warning.is-rounded {
+            color: #3273dc;
+        }
+
+        .dark-mode .button.is-link.is-rounded, .dark-mode .button.is-dark.is-rounded, .dark-mode .button.is-danger.is-rounded, .dark-mode .button.is-warning.is-rounded {
+            color: #93c5fd;
+        }
+
+        .light-mode .tabs ul li a {
+            color: #363636;
+        }
+
+        .dark-mode .tabs ul li a {
+            color: #f5f5f5;
+        }
+
+        .light-mode .tabs ul li.is-active a {
+            color: #3273dc;
+        }
+
+        .dark-mode .tabs ul li.is-active a {
+            color: #93c5fd;
+        }
+
+    </style>
+</head>
+<body class="light-mode">
+<nav class="breadcrumb is-centered is-medium" aria-label="breadcrumbs">
+    <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li class="is-active"><a href="../unit convertor/index.html" aria-current="page">Unit Convertor</a></li>
+    </ul>
+</nav>
+<section class="py-6 section">
+    <div class="container pb-5 has-text-centered">
+        <h1 class="title ">
+            Unit Convertor
+        </h1>
+    </div>
+    <div class="container pt-5 has-text-centered">
+        <div class="tabs is-fullwidth">
+            <ul>
+                <li onclick="UnitConverters('Length'); setActiveTab(this);" class="is-active">
+                    <a>
+                        <span class="icon-text">
+                            <span>Length</span>
+                            <span class="icon">
+                                <i class="fas fa-ruler-horizontal"></i>
                             </span>
-                            <span>Reset</span>
-                        </button>
-                    <section class="p-6">
-                        <div class="columns is-mobile is-2 is-half">
-                                <div class="column">
-                                    <div class="field">
-                                            <label for="ipFahrenheit" class="label is-medium">Fahrenheit</label>
-                                            <div class="control">
-                                                <input class="input is-medium" id="ipFahrenheit" placeholder="Fahrenheit"
-            oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">
-                                            </div>
-                                    </div>
-                                    <div class="field">
-                                            <label for="ipCelsius" class="label is-medium">Celsius</label>
-                                            <div class="control">
-                                                <input class="input is-medium" type="number"   id="ipCelsius" placeholder="Celsius"
-            oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">
-                                            </div>
-                                    </div>
-                                </div>
-                                <div class="column">
-                                    <div class="field">
-                                            <label for="ipKelvin" class="label is-medium">Kelvin</label>
-                                            <div class="control">
-                                                <input class="input is-medium" type="number"   id="ipKelvin" placeholder="Kelvin"
-            oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">
-                                            </div>
-                                    </div>
-                                </div>  
-                        </div>
-                    </section>
-                </div>
-                <!-- Temperature  Ends-->
-                <!--  Weight  -->
-                 <div class="container unitName" id="Weight" style="display:none;">
-                       <div class="notification is-warning is-light">
-                            <strong>
-                                <span class="icon-text">
-                                    <span> Weight Converter</span>
-                                    <span class="icon">
-                                         <i class="fas fa-balance-scale"></i>
-                                    </span>
-                                </span> 
-                            </strong>
-                        </div>
-                        <button class="button is-link is-rounded is-warning" onclick="clearWeight()" value="clear">
-                             <span class="icon">
-                                    <i class="fas fa-redo"></i>
+                        </span>
+                    </a>
+                </li>
+                <li onclick="UnitConverters('Weight'); setActiveTab(this);">
+                    <a>
+                        <span class="icon-text">
+                            <span>Weight</span>
+                            <span class="icon">
+                                <i class="fas fa-balance-scale"></i>
                             </span>
-                            <span>Reset</span>
-                        </button>
-                    <section class="p-6">
-                        <div class="columns is-mobile is-2 is-half">
-                                <div class="column">
-                                    <div class="field">
-                                            <label for="ipGrams" class="label is-medium">Grams</label>
-                                            <div class="control">
-                                                <input class="input is-medium" id="ipGrams" placeholder="Grams"
-            oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
-                                            </div>
-                                    </div>
-                                    <div class="field">
-                                            <label for="ipKilograms" class="label is-medium">Kilograms</label>
-                                            <div class="control">
-                                        <input class="input is-medium" type="number" id="ipKilograms" placeholder="Kilograms"
-            oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
-                                            </div>
-                                    </div>
-                                </div>
-                                <div class="column">
-                                    <div class="field">
-                                            <label for="ipPounds" class="label is-medium">Pounds</label>
-                                            <div class="control">
-                                                <input class="input is-medium" type="number" id="ipPounds" placeholder="Pounds"
-            oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
-                                            </div>
-                                    </div>
-                                    <div class="field">
-                                            <label for="ipOunces" class="label is-medium">Ounces</label>
-                                            <div class="control">
-                                                <input class="input is-medium" type="number" id="ipOunces" placeholder="Ounces"
-            oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
-                                            </div>
-                                    </div>
-                                </div>  
+                        </span>
+                    </a>
+                </li>
+                <li onclick="UnitConverters('Speed'); setActiveTab(this);">
+                    <a>
+                        <span class="icon-text">
+                            <span>Speed</span>
+                            <span class="icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </span>
+                        </span>
+                    </a>
+                </li>
+                <li onclick="UnitConverters('Temperature'); setActiveTab(this);">
+                    <a>
+                        <span class="icon-text">
+                            <span>Temperature</span>
+                            <span class="icon">
+                                <i class="fas fa-temperature-low"></i>
+                            </span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a id="toggleModeButton">
+                        <span class="icon-text">
+                            <span>Mode</span>
+                            <span class="icon">
+                                <i class="fas fa-adjust"></i>
+                            </span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container unitName" id="Length">
+        <div class="notification is-link is-light">
+            <strong>
+                <span class="icon-text">
+                    <span> Length Converter</span>
+                    <span class="icon">
+                        <i class="fas fa-ruler-horizontal"></i>
+                    </span>
+                </span>
+            </strong>
+        </div>
+        <button class="button is-link is-rounded" onclick="clearLength()" value="clear">
+            <span class="icon">
+                <i class="fas fa-redo"></i>
+            </span>
+            <span>Reset</span>
+        </button>
+        <section class="p-6">
+            <div class="columns is-mobile is-2 is-half">
+                <div class="column">
+                    <div class="field">
+                        <label for="ipFeet" class="label is-medium">Feet</label>
+                        <div class="control">
+                            <input class="input is-medium" id="ipFeet" type="number" placeholder="Feet"
+                                   oninput="lengthConverter(this.id,this.value)"
+                                   onchange="lengthConverter(this.id,this.value)">
                         </div>
-                    </section>
+                    </div>
+                    <div class="field">
+                        <label for="ipMeters" class="label is-medium">Meters</label>
+                        <div class="control">
+                            <input class="input is-medium" type="number" id="ipMeters" placeholder="Meters"
+                                   oninput="lengthConverter(this.id,this.value)"
+                                   onchange="lengthConverter(this.id,this.value)">
+                        </div>
+                    </div>
                 </div>
-                <!--  Weight Ends -->
-            </section>
-            
+                <div class="column">
+                    <div class="field">
+                        <label for="ipInches" class="label is-medium">Inches</label>
+                        <div class="control">
+                            <input class="input is-medium" type="number" id="ipInches" placeholder="Inches"
+                                   oninput="lengthConverter(this.id,this.value)"
+                                   onchange="lengthConverter(this.id,this.value)">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="ipKilometers" class="label is-medium">Kilometers</label>
+                        <div class="control">
+                            <input class="input is-medium" type="number" id="ipKilometers" placeholder="Kilometers"
+                                   oninput="lengthConverter(this.id,this.value)"
+                                   onchange="lengthConverter(this.id,this.value)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="container unitName" id="Speed" style="display:none;">
+        <div class="notification is-dark is-light">
+            <strong>
+                <span class="icon-text">
+                    <span> Speed Converter </span>
+                    <span class="icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </span>
+                </span>
+            </strong>
+        </div>
+        <button class="button is-dark is-rounded" onclick="clearSpeed()" value="clear">
+            <span class="icon">
+                <i class="fas fa-redo"></i>
+            </span>
+            <span>Reset</span>
+        </button>
+        <section class="p-6">
+            <div class="columns is-mobile is-2 is-half">
+                <div class="column">
+                    <div class="field">
+                        <label for="ipMPH" class="label is-medium">MPH</label>
+                        <div class="control">
+                            <input class="input is-medium" id="ipMPH" placeholder="MPH"
+                                   oninput="speedConverter(this.id,this.value)"
+                                   onchange="speedConverter(this.id,this.value)">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="ipKPH" class="label is-medium">KPH</label>
+                        <div class="control">
+                            <input class="input is-medium" type="number" id="ipKPH" placeholder="KPH"
+                                   oninput="speedConverter(this.id,this.value)"
+                                   onchange="speedConverter(this.id,this.value)">
+                        </div>
+                    </div>
+                </div>
+                <div class="column"></div>
+            </div>
+        </section>
+    </div>
+    <div class="container unitName" id="Temperature" style="display:none;">
+        <div class="notification is-danger is-light">
+            <strong>
+                <span class="icon-text">
+                    <span> Temperature Converter</span>
+                    <span class="icon">
+                        <i class="fas fa-temperature-low"></i>
+                    </span>
+                </span>
+            </strong>
+        </div>
+        <button class="button is-link is-rounded is-danger" onclick="clearTemperature()" value="clear">
+            <span class="icon">
+                <i class="fas fa-redo"></i>
+            </span>
+            <span>Reset</span>
+        </button>
+        <section class="p-6">
+            <div class="columns is-mobile is-2 is-half">
+                <div class="column">
+                    <div class="field">
+                        <label for="ipFahrenheit" class="label is-medium">Fahrenheit</label>
+                        <div class="control">
+                            <input class="input is-medium" id="ipFahrenheit" placeholder="Fahrenheit"
+                                   oninput="temperatureConverter(this.id,this.value)"
+                                   onchange="temperatureConverter(this.id,this.value)">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="ipCelsius" class="label is-medium">Celsius</label>
+                        <div class="control">
+                            <input class="input is-medium" type="number" id="ipCelsius" placeholder="Celsius"
+                                   oninput="temperatureConverter(this.id,this.value)"
+                                   onchange="temperatureConverter(this.id,this.value)">
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label for="ipKelvin" class="label is-medium">Kelvin</label>
+                        <div class="control">
+                            <input class="input is-medium" type="number" id="ipKelvin" placeholder="Kelvin"
+                                   oninput="temperatureConverter(this.id,this.value)"
+                                   onchange="temperatureConverter(this.id,this.value)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="container unitName" id="Weight" style="display:none;">
+        <div class="notification is-warning is-light">
+            <strong>
+                <span class="icon-text">
+                    <span> Weight Converter</span>
+                    <span class="icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </span>
+                </span>
+            </strong>
+        </div>
+        <button class="button is-link is-rounded is-warning" onclick="clearWeight()" value="clear">
+            <span class="icon">
+                <i class="fas fa-redo"></i>
+            </span>
+            <span>Reset</span>
+        </button>
+        <section class="p-6">
+            <div class="columns is-mobile is-2 is-half">
+                <div class="column">
+                    <div class="field">
+                        <label for="ipGrams" class="label is-medium">Grams</label>
+                        <div class="control">
+                            <input class="input is-medium" id="ipGrams" placeholder="Grams"
+                                   oninput="weightConverter(this.id,this.value)"
+                                   onchange="weightConverter(this.id,this.value)">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="ipKilograms" class="label is-medium">Kilograms</label>
+                        <div class="control">
+                            <input class="input is-medium" type="number" id="ipKilograms" placeholder="Kilograms"
+                                   oninput="weightConverter(this.id,this.value)"
+                                   onchange="weightConverter(this.id,this.value)">
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label for="ipPounds" class="label is-medium">Pounds</label>
+                        <div class="control">
+                            <input class="input is-medium" type="number" id="ipPounds" placeholder="Pounds"
+                                   oninput="weightConverter(this.id,this.value)"
+                                   onchange="weightConverter(this.id,this.value)">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="ipOunces" class="label is-medium">Ounces</label>
+                        <div class="control">
+                            <input class="input is-medium" type="number" id="ipOunces" placeholder="Ounces"
+                                   oninput="weightConverter(this.id,this.value)"
+                                   onchange="weightConverter(this.id,this.value)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    </section>
+
 <script src="./js/script.js"></script>
-  </body>
+</body>
 </html>

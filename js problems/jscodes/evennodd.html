@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../../css/bulma.css" />
+		<title>Even and Odd</title>
+	</head>
+	<body>
+		<nav class="breadcrumb is-centered is-medium" aria-label="breadcrumbs">
+			<ul>
+				<li><a href="../../index.html">Home</a></li>
+				<li class="is-active">
+					<a href="#" aria-current="page">Even and Odd </a>
+				</li>
+			</ul>
+		</nav>
+		<section class="is-center p-5 m-5">
+			<div class="container p-5">
+				<div class="columns is-multiline is-centered">
+					<div class="column is-5 is-4-desktop">
+						
+						<form class="box form" id="evenodd">
+							<div class="field is-grouped">
+								<p class="control is-expanded">
+									<input
+										class="input"
+										id="num-input"
+										type="text"
+										placeholder="Number to check Even or Odd"/>
+								</p>
+							</div>
+							<div class="field">
+								<div class="control has-text-centered">
+									<button class="button is-info" id="check-btn">
+										Even N Odd 
+									</button>
+								</div>
+							</div>
+                            <div>
+                                <div>
+                                    <div class="notification">
+                                        <strong id="result"></strong>
+                                    </div>
+                                </div>
+                            </div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<script>
+			const numInput = document.querySelector('#num-input');
+			const checkBtn = document.querySelector('#check-btn');
+			const resevenodd = document.querySelector('#result');
+		  
+			checkBtn.addEventListener('click', () => {
+			  const num = parseInt(numInput.value);
+			  if (isNaN(num)) {
+				resevenodd.textContent = 'Please enter a valid number';
+			  } else {
+				const result = evenOrOdd(num);
+				resevenodd.textContent = `The number ${num} is ${result}`;
+			  }
+			});
+		  
+			function evenOrOdd(num) {
+			  return num % 2 === 0? "Even" : "Odd";
+			}
+		  </script>
+		
+	</body>
+</html>

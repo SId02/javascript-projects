@@ -3,7 +3,7 @@ const hoursEl = document.querySelector(".hours");
 const minutesEl = document.querySelector(".minutes");
 const secondsEl = document.querySelector(".seconds");
 
-const newYears = "1 Jan 2022";
+const newYears = "1 Jan 2026";
 
 
 function formatTime(time) {

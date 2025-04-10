@@ -1,65 +1,147 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Form Validation</title>
-    <link rel="stylesheet" href="../css/bulma.css">
-  </head>
-  <body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <style>
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .input,
+        body.dark-mode .label,
+        body.dark-mode .button,
+        body.dark-mode .breadcrumb a {
+            background-color: #333;
+            color: #e0e0e0;
+            border-color: #555;
+        }
+
+        body.dark-mode .breadcrumb li.is-active a {
+            color: #bbb;
+        }
+
+        body.dark-mode .title {
+            color: #e0e0e0 !important;
+        }
+        .toggle-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="toggle-container">
+        <button class="button" id="darkModeToggle">Toggle Dark Mode</button>
+    </div>
     <nav class="breadcrumb is-centered is-medium" aria-label="breadcrumbs">
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li class="is-active"><a href="#" aria-current="page">Form Validation</a></li>
-      </ul>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Form Validation</a></li>
+        </ul>
     </nav>
 
-  <section class="section">
-          <div class="container">
+    <section class="section">
+        <div class="container">
             <h1 class="title has-text-centered">
-           Form Validation
+                Form Validation
             </h1>
-          </div>
-            <section class="section">
-                  <div class="container">
-                      <div class="columns is-mobile">
-                          <div class="column is-half is-offset-one-quarter">
-                              <div class="field">
-                                  <label class="label">Name</label>
-                                  <div class="control">
-                                      <input class="input name" type="text" placeholder="Enter Your Name must be between 3 and 30 characters ">
-                                  </div>
-                              
-                              </div>
-                              <div class="field">
-                                  <label class="label">Email</label>
-                                  <div class="control">
-                                      <input class="input email" type="email" placeholder="Enter Your Email ID">
-                                  </div>
-                              </div>
-                              <div class="field">
-                                  <label class="label">Mobile</label>
-                                  <div class="control">
-                                      <input class="input mobile" type="text"  placeholder="Enter Your Mobile No 10 digits no without +91 ">
-                                  </div>
-                            
-                              </div>
-                              <div class="field">
-                                  <label class="label">Pincode</label>
-                                  <div class="control">
-                                      <input class="input pincode" type="text"  placeholder="Enter 6 digits Pincode ">
-                                  </div>
-                              </div>
-                              <div class="field">
-                                  <div class="control">
-                                      <button class="button is-link btnSubmit">Submit</button>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </section>
+        </div>
+        <section class="section">
+            <div class="container">
+                <div class="columns is-mobile">
+                    <div class="column is-half is-offset-one-quarter">
+                        <div class="field">
+                            <label class="label">Name</label>
+                            <div class="control">
+                                <input class="input name" type="text" placeholder="Enter Your Name must be between 3 and 30 characters ">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Email</label>
+                            <div class="control">
+                                <input class="input email" type="email" placeholder="Enter Your Email ID">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Mobile</label>
+                            <div class="control">
+                                <input class="input mobile" type="text" placeholder="Enter Your Mobile No 10 digits no without +91 ">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Pincode</label>
+                            <div class="control">
+                                <input class="input pincode" type="text" placeholder="Enter 6 digits Pincode ">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-link btnSubmit">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-  <script src="./js/script.js"></script>
-  </body>
+    </section>
+    <script>
+        document.querySelector(".name").addEventListener("blur", checkName);
+        document.querySelector(".email").addEventListener("blur", checkEmail);
+        document.querySelector(".mobile").addEventListener("blur", checkMobile);
+        document.querySelector(".pincode").addEventListener("blur", checkPincode);
+
+        // Function to Validate Name
+        function checkName() {
+            const name = document.querySelector(".name");
+            const regName = /^[a-zA-Z]{3,30}$/;
+            if (!regName.test(name.value)) {
+                name.classList.add("is-danger");
+            } else {
+                name.classList.remove("is-danger");
+            }
+        }
+
+        // Function to Validate Email Id
+        function checkEmail() {
+            const email = document.querySelector(".email");
+            const regEmail = /^[a-z0-9]+@[a-z0-9]*\.[a-z]+$/i;
+            if (!regEmail.test(email.value)) {
+                email.classList.add("is-danger");
+            } else {
+                email.classList.remove("is-danger");
+            }
+        }
+
+        // Function to Validate Mobile No
+        function checkMobile() {
+            const mobile = document.querySelector(".mobile");
+            const regMobile = /^[789]\d{9}$/;
+            if (!regMobile.test(mobile.value)) {
+                mobile.classList.add("is-danger");
+            } else {
+                mobile.classList.remove("is-danger");
+            }
+        }
+
+        // Function to PinCode
+        function checkPincode() {
+            const pin = document.querySelector(".pincode");
+            const regPincode = /^[1-9]{1}[0-9]{5}$/;
+            if (!regPincode.test(pin.value)) {
+                pin.classList.add("is-danger");
+            } else {
+                pin.classList.remove("is-danger");
+            }
+        }
+        const darkModeToggle = document.getElementById("darkModeToggle");
+        darkModeToggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+        });
+    </script>
+</body>
 </html>

@@ -1,10 +1,3 @@
-// document.querySelector("#generate").addEventListener("click", () => {
-//   generate();
-// });
-
-
-
-
 
 const jokeElement = document.querySelector('#joke')
 const jokeBtn = document.querySelector('#getJokes')
@@ -13,7 +6,6 @@ jokeBtn.addEventListener('click', generateJoke)
 
 generateJoke()
 
-// USING ASYNC/AWAIT
 async function generateJoke() {
   const config = {
     headers: {

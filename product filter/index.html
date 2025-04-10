@@ -1,368 +1,320 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="10+ Javascript Projects">
     <meta name="author" content="10+ Javascript Projects ">
-     <link rel="stylesheet" href="../css/bulma.css">
-    <title>Product Filter </title>
+    <link rel="stylesheet" href="../css/bulma.css">
+    <title>Product Filter</title>
     <style>
-      .product-details p span {
-    text-decoration: line-through;
-    color: red;
-    font-weight: normal;
-}
+        .product-details p span {
+            text-decoration: line-through;
+            color: red;
+            font-weight: normal;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .card,
+        body.dark-mode .input,
+        body.dark-mode .button {
+            background-color: #333;
+            color: #e0e0e0;
+            border-color: #555;
+        }
+
+        body.dark-mode .button:focus {
+            border-color: #888;
+            box-shadow: 0 0 0 0.125em rgba(179, 179, 179, 0.25);
+        }
+
+        body.dark-mode .breadcrumb a {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .breadcrumb li.is-active a {
+            color: #bbb;
+        }
+
+        body.dark-mode .title,
+        body.dark-mode h3,
+        body.dark-mode .title.is-6 {
+            color: #e0e0e0 !important;
+        }
+        .toggle-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
     </style>
-  </head>
-  <body>
- 
-<nav class="breadcrumb is-centered is-medium" aria-label="breadcrumbs">
-  <ul>
-    <li><a href="../index.html">Home</a></li>
-    <li class="is-active"><a href="#" aria-current="page">Product Filter</a></li>
-  </ul>
-</nav>
+</head>
+<body>
+    <div class="toggle-container">
+        <button class="button" id="darkModeToggle">Toggle Dark Mode</button>
+    </div>
+    <nav class="breadcrumb is-centered is-medium" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Product Filter</a></li>
+        </ul>
+    </nav>
 
     <section class="py-6 section">
-            <div class="container pb-5 has-text-centered">
-              <h1 class="title">Product Filter</h1>
+        <div class="container pb-5 has-text-centered">
+            <h1 class="title">Product Filter</h1>
+        </div>
+        <div class="container pt-5 has-text-centered">
+            <div class="columns is-multiline is-centered">
+                <div class="column is-10 is-10-desktop">
+                    <div class="field is-horizontal">
+                        <div class="field-body">
+                            <div class="field" onsubmit="return false">
+                                <div class="control">
+                                    <input class="input string" type="text" id="search" placeholder="Search Product">
+                                </div>
+                            </div>
+                            <div class="buttons filter-box ">
+                                <button class="button filter-btn" data-filter="all">All</button>
+                                <button class="button filter-btn" data-filter="mobile">Mobile</button>
+                                <button class="button filter-btn" data-filter="keyboard">keyboard</button>
+                                <button class="button filter-btn " data-filter="mouse">Mouse</button>
+                                <button class="button filter-btn" data-filter="monitor">Monitor</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="container pt-5 has-text-centered">
-                  <div class="columns is-multiline is-centered">
-                      <div class="column is-10 is-10-desktop">
-                          <div class="field is-horizontal">
-                              <div class="field-body">
-                                  <div class="field"  onsubmit="return false">
-                                        <div class="control">
-                                            <input class="input string" type="text" id="search" placeholder="Search Product">
-                                        </div>
-                                  </div>
-                                  <div class="buttons filter-box ">
-                                        <button class="button filter-btn" data-filter="all">All</button>
-                                        <button class="button filter-btn" data-filter="mobile">Mobile</button>
-                                        <button class="button filter-btn" data-filter="keyboard">keyboard</button>
-                                        <button class="button filter-btn " data-filter="mouse">Mouse</button>
-                                        <button class="button filter-btn" data-filter="monitor">Monitor</button>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>       
-                  </div>
-            </div>       
+        </div>
     </section>
 
-<section class="section">
-  <div class="container has-text-centered" id="store-products">
-    <div class="columns is-centered  is-multiline">
-      <div class="column is-3 is-3-desktop store-product mobile">
-        <div class="container">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image">
-                <img
-                  src="./img/Placeholder-300x200.svg"
-                  alt="Placeholder image"
-                />
-              </figure>
-            </div>
-            <div class="content has-text-centered p-3 m-2 product-details">
-             <h3>mobile</h3>
-              <div class="media-content m-2">
-              <p class="title is-6"> <span>$12,999</span> $10,999</p>
-              </div>
-              
-              <button class="button is-link">
-               Add to Cart
-              </button>
-            </div>
-            </div>
-          </div>
-     
-      </div>
-      <div class="column is-3 is-3-desktop store-product mobile">
-        <div class="container">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image">
-                <img
-                src="./img/Placeholder-300x200.svg"
-                  alt="Placeholder image"
-                />
-              </figure>
-            </div>
-            <div class="content has-text-centered p-3 m-2">
-              <h3>mobile</h3>
-              <div class="media-content m-2">
-                <p class="title is-6"> <span>$12,999</span> $10,999</p>
-              </div>
-              
-              <button class="button is-link">
-               Add to Cart
-              </button>
-            </div>
-            </div>
-          </div>
-      </div>
-      <div class="column is-3 is-3-desktop store-product mobile">
-        <div class="container">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image">
-                <img
-                src="./img/Placeholder-300x200.svg"
-                  alt="Placeholder image"
-                />
-              </figure>
-            </div>
-            <div class="content has-text-centered p-3 m-2 product-details">
-              <h3>mobile</h3>
-              <div class="media-content m-2">
-                <p class="title is-6"> <span>$12,999</span> $10,999</p>
-              </div>
-              
-              <button class="button is-link">
-               Add to Cart
-              </button>
-            </div>
-            </div>
-          </div>
-      </div>
-      <div class="column is-3 is-3-desktop store-product mobile">
-        <div class="container">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image">
-                <img
-                src="./img/Placeholder-300x200.svg"
-                  alt="Placeholder image"
-                />
-              </figure>
-            </div>
-            <div class="content has-text-centered p-3 m-2 product-details">
-              <h3>mobile</h3>
-              <div class="media-content m-2">
-                <p class="title is-6"> <span>$12,999</span> $10,999</p>
-              </div>
-              
-              <button class="button is-link">
-               Add to Cart
-              </button>
-            </div>
-            </div>
-          </div>
-      </div>
-      <div class="column is-3 is-3-desktop store-product keyboard">
-        <div class="container">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image">
-                <img
-                src="./img/Placeholder-300x200.svg"
-                  alt="Placeholder image"
-                />
-              </figure>
-            </div>
-            <div class="content has-text-centered p-3 m-2 product-details">
-              <h3>keyboard</h3>
-              <div class="media-content m-2">
-                <p class="title is-6"> <span>$12,999</span> $10,999</p>
-              </div>
-              
-              <button class="button is-link">
-               Add to Cart
-              </button>
-            </div>
-            </div>
-          </div>
-     
-      </div>
-      <div class="column is-3 is-3-desktop store-product keyboard">
-        <div class="container">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image">
-                <img
-                src="./img/Placeholder-300x200.svg"
-                  alt="Placeholder image"
-                />
-              </figure>
-            </div>
-            <div class="content has-text-centered p-3 m-2 product-details">
-              <h3>keyboard</h3>
-              <div class="media-content m-2">
-                <p class="title is-6"> <span>$12,999</span> $10,999</p>
-              </div>
-              
-              <button class="button is-link">
-               Add to Cart
-              </button>
-            </div>
-            </div>
-          </div>
-      </div>
-      <div class="column is-3 is-3-desktop store-product keyboard">
-        <div class="container">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image">
-                <img
-                src="./img/Placeholder-300x200.svg"
-                  alt="Placeholder image"
-                />
-              </figure>
-            </div>
-            <div class="content has-text-centered p-3 m-2 product-details">
-              <h3>keyboard</h3>
-              <div class="media-content m-2">
-                <p class="title is-6"> <span>$12,999</span> $10,999</p>
-              </div>
-              
-              <button class="button is-link">
-               Add to Cart
-              </button>
-            </div>
-            </div>
-          </div>
-      </div>
-      <div class="column is-3 is-3-desktop store-product mouse">
-        <div class="container">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image">
-                <img
-                src="./img/Placeholder-300x200.svg"
-                  alt="Placeholder image"
-                />
-              </figure>
-            </div>
-            <div class="content has-text-centered p-3 m-2 product-details">
-              <h3>mouse</h3>
-              <div class="media-content m-2">
-                <p class="title is-6"> <span>$12,999</span> $10,999</p>
-              </div>
-              
-              <button class="button is-link">
-               Add to Cart
-              </button>
-            </div>
-            </div>
-          </div>
-      </div>
-      <div class="column is-3 is-3-desktop store-product mouse">
-        <div class="container">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image">
-                <img
-                src="./img/Placeholder-300x200.svg"
-                  alt="Placeholder image"
-                />
-              </figure>
-            </div>
-            <div class="content has-text-centered p-3 m-2 product-details">
-              <h3>mouse</h3>
-              <div class="media-content m-2">
-                <p class="title is-6"> <span>$12,999</span> $10,999</p>
-              </div>
-              
-              <button class="button is-link">
-               Add to Cart
-              </button>
-            </div>
-            </div>
-          </div>
-     
-      </div>
-      <div class="column is-3 is-3-desktop store-product mouse">
-        <div class="container">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image">
-                <img
-                src="./img/Placeholder-300x200.svg"
-                  alt="Placeholder image"
-                />
-              </figure>
-            </div>
-            <div class="content has-text-centered p-3 m-2 product-details">
-              <h3>mouse</h3>
-              <div class="media-content m-2">
-                <p class="title is-6"> <span>$12,999</span> $10,999</p>
-              </div>
-              
-              <button class="button is-link">
-               Add to Cart
-              </button>
-            </div>
-            </div>
-          </div>
-      </div>
-      <div class="column is-3 is-3-desktop store-product monitor">
-        <div class="container">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image">
-                <img
-                src="./img/Placeholder-300x200.svg"
-                  alt="Placeholder image"
-                />
-              </figure>
-            </div>
-            <div class="content has-text-centered p-3 m-2 product-details">
-              <h3>monitor</h3>
-              <div class="media-content m-2">
-                <p class="title is-6"> <span>$12,999</span> $10,999</p>
-              </div>
-              
-              <button class="button is-link">
-               Add to Cart
-              </button>
-            </div>
-            </div>
-          </div>
-      </div>
-      <div class="column is-3 is-3-desktop store-product monitor">
-        <div class="container">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image">
-                <img
-                src="./img/Placeholder-300x200.svg"
-                  alt="Placeholder image"
-                />
-              </figure>
-            </div>
-              <div class="content has-text-centered p-3 m-2">
-                <h3>monitor</h3>
-                <div class="media-content m-2">
-                  <p class="title is-6"> <span>$12,999</span> $10,999</p>
+    <section class="section">
+        <div class="container has-text-centered" id="store-products">
+            <div class="columns is-centered is-multiline">
+                <div class="column is-3 is-3-desktop store-product mobile">
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <img src="./img/Placeholder-300x200.svg" alt="Placeholder image" />
+                                </figure>
+                            </div>
+                            <div class="content has-text-centered p-3 m-2 product-details">
+                                <h3>mobile</h3>
+                                <div class="media-content m-2">
+                                    <p class="title is-6"> <span>$12,999</span> $10,999</p>
+                                </div>
+                                <button class="button is-link">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <button class="button is-link">
-                 Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-      </div>
-    </div>
-  </div>
-</section>
-<script src="./js/script.js"></script>
-  </body>
-</html>
-<hr>
-.is-shady {
-  animation: flyintoright .4s backwards;
-  background: #fff;
-  box-shadow: rgba(0, 0, 0, .1) 0 1px 0;
-  border-radius: 4px;
-  display: inline-block;
-  margin: 10px;
-  position: relative;
-  transition: all .2s ease-in-out;
-}
+                <div class="column is-3 is-3-desktop store-product mobile">
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <img src="./img/Placeholder-300x200.svg" alt="Placeholder image" />
+                                </figure>
+                            </div>
+                            <div class="content has-text-centered p-3 m-2 product-details">
+                                <h3>mobile</h3>
+                                <div class="media-content m-2">
+                                    <p class="title is-6"> <span>$12,999</span> $10,999</p>
+                                </div>
+                                <button class="button is-link">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3 is-3-desktop store-product mobile">
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <img src="./img/Placeholder-300x200.svg" alt="Placeholder image" />
+                                </figure>
+                            </div>
+                            <div class="content has-text-centered p-3 m-2 product-details">
+                                <h3>mobile</h3>
+                                <div class="media-content m-2">
+                                    <p class="title is-6"> <span>$12,999</span> $10,999</p>
+                                </div>
+                                <button class="button is-link">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3 is-3-desktop store-product mobile">
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <img src="./img/Placeholder-300x200.svg" alt="Placeholder image" />
+                                </figure>
+                            </div>
+                            <div class="content has-text-centered p-3 m-2 product-details">
+                                <h3>mobile</h3>
+                                <div class="media-content m-2">
+                                    <p class="title is-6"> <span>$12,999</span> $10,999</p>
+                                </div>
+                                <button class="button is-link">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3 is-3-desktop store-product keyboard">
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <img src="./img/Placeholder-300x200.svg" alt="Placeholder image" />
+                                </figure>
+                            </div>
+                            <div class="content has-text-centered p-3 m-2 product-details">
+                                <h3>keyboard</h3>
+                                <div class="media-content m-2">
+                                    <p class="title is-6"> <span>$12,999</span> $10,999</p>
+                                </div>
+                                <button class="button is-link">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3 is-3-desktop store-product keyboard">
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <img src="./img/Placeholder-300x200.svg" alt="Placeholder image" />
+                                </figure>
+                            </div>
+                            <div class="content has-text-centered p-3 m-2 product-details">
+                                <h3>keyboard</h3>
+                                <div class="media-content m-2">
+                                    <p class="title is-6"> <span>$12,999</span> $10,999</p>
+                                </div>
+                                <button class="button is-link">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3 is-3-desktop store-product keyboard">
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <img src="./img/Placeholder-300x200.svg" alt="Placeholder image" />
+                                </figure>
+                            </div>
+                            <div class="content has-text-centered p-3 m-2 product-details">
+                                <h3>keyboard</h3>
+                                <div class="media-content m-2">
+                                    <p class="title is-6"> <span>$12,999</span> $10,999</p>
+                                </div>
+                                <button class="button is-link">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3 is-3-desktop store-product mouse">
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <img src="./img/Placeholder-300x200.svg" alt="Placeholder image" />
 
-.is-shady:hover {
-  box-shadow: 0 10px 16px rgba(0, 0, 0, .13), 0 6px 6px rgba(0, 0, 0, .19);
-}
+                                  </figure>
+                                </div>
+                                <div class="content has-text-centered p-3 m-2 product-details">
+                                    <h3>mouse</h3>
+                                    <div class="media-content m-2">
+                                        <p class="title is-6"> <span>$12,999</span> $10,999</p>
+                                    </div>
+                                    <button class="button is-link">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-3 is-3-desktop store-product mouse">
+                        <div class="container">
+                            <div class="card">
+                                <div class="card-image">
+                                    <figure class="image">
+                                        <img src="./img/Placeholder-300x200.svg" alt="Placeholder image" />
+                                    </figure>
+                                </div>
+                                <div class="content has-text-centered p-3 m-2 product-details">
+                                    <h3>mouse</h3>
+                                    <div class="media-content m-2">
+                                        <p class="title is-6"> <span>$12,999</span> $10,999</p>
+                                    </div>
+                                    <button class="button is-link">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-3 is-3-desktop store-product mouse">
+                        <div class="container">
+                            <div class="card">
+                                <div class="card-image">
+                                    <figure class="image">
+                                        <img src="./img/Placeholder-300x200.svg" alt="Placeholder image" />
+                                    </figure>
+                                </div>
+                                <div class="content has-text-centered p-3 m-2 product-details">
+                                    <h3>mouse</h3>
+                                    <div class="media-content m-2">
+                                        <p class="title is-6"> <span>$12,999</span> $10,999</p>
+                                    </div>
+                                    <button class="button is-link">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-3 is-3-desktop store-product monitor">
+                        <div class="container">
+                            <div class="card">
+                                <div class="card-image">
+                                    <figure class="image">
+                                        <img src="./img/Placeholder-300x200.svg" alt="Placeholder image" />
+                                    </figure>
+                                </div>
+                                <div class="content has-text-centered p-3 m-2 product-details">
+                                    <h3>monitor</h3>
+                                    <div class="media-content m-2">
+                                        <p class="title is-6"> <span>$12,999</span> $10,999</p>
+                                    </div>
+                                    <button class="button is-link">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-3 is-3-desktop store-product monitor">
+                        <div class="container">
+                            <div class="card">
+                                <div class="card-image">
+                                    <figure class="image">
+                                        <img src="./img/Placeholder-300x200.svg" alt="Placeholder image" />
+                                    </figure>
+                                </div>
+                                <div class="content has-text-centered p-3 m-2 product-details">
+                                    <h3>monitor</h3>
+                                    <div class="media-content m-2">
+                                        <p class="title is-6"> <span>$12,999</span> $10,999</p>
+                                    </div>
+                                    <button class="button is-link">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="./js/script.js"></script>
+    </body>
+    </html>
