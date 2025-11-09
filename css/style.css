@@ -3,17 +3,7 @@
 	font-family: 'Ubuntu', sans-serif;
 	transition: background-color 0.3s ease, color 0.3s ease; 
  }
- 
- .light-mode {
-	background-color: white;
-	color: black;
- }
- 
- .dark-mode {
-	background-color: #121212;
-	color: #dcdcdc;
- }
- 
+
  .hero {
 	background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
 	background-repeat: no-repeat;
@@ -22,46 +12,13 @@
 	padding: 2rem;
  }
  
- .btnclr {
-	background-color: #6f5af8;
-	color: #fff;
-	transition: background-color 0.3s ease; 
- }
- 
- .btnclr:hover {
-	background-color: #5a47d3;
- }
  
  .footer {
 	background-color: #6f5af8;
 	padding: 1rem;
 	text-align: center;
  }
- 
- .card {
-	border: 1px solid #ddd;
-	border-radius: 8px;
-	overflow: hidden;
-	transition: transform 0.2s ease;
- }
- 
- .card:hover {
-	transform: translateY(-5px);
- }
- 
- .card-content {
-	padding: 1rem;
- }
- 
- .card-footer-item a {
-	text-decoration: none;
-	color: #fff;
- }
- 
- .card-footer-item a:hover {
-	background-color: #5a47d3;
- }
- 
+
  @media (max-width: 768px) {
 	.columns {
 	   margin: 0;
@@ -73,40 +30,3 @@
 	   padding: 2rem 0.5rem;
 	}
  }
-
- .dark-mode .btnclr {
-	background-color: #4c3d91;
- }
- 
- .dark-mode .card {
-	border: 1px solid #444;
- }
- 
- .dark-mode .footer {
-	background-color: #444;
- }
- 
- .dark-mode .card-footer-item a {
-	color: #ddd;
- }
- 
- .dark-mode .card-footer-item a:hover {
-	background-color: #3c2a7c;
- }
- 
- .toggle-theme-btn {
-	margin-top: 20px;
-	padding: 10px 15px;
-	background-color: #6f5af8;
-	color: white;
-	border: none;
-	cursor: pointer;
-	border-radius: 5px;
-	font-size: 16px;
-	transition: background-color 0.3s ease;
- }
- 
- .toggle-theme-btn:hover {
-	background-color: #5a47d3;
- }
- 
