@@ -6,12 +6,60 @@
     <link rel="stylesheet" href="../css/bulma.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <title>Weather App</title>
-    <style>
-       
-    </style>
+
 </head>
 <body>
+   <nav class="breadcrumb is-centered is-medium" aria-label="breadcrumbs">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="is-active"><a href="#" aria-current="page">Weather App</a></li>
+                </ul>
+            </nav>
+<section class="section min-vh-100">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-10-tablet is-8-desktop">
+          <div class="box has-shadow">
+            <h1 class="title is-2 has-text-link-dark has-text-centered mb-5">Weather App</h1>
 
+            <div class="has-text-centered mb-4">
+              <div class="buttons is-centered">
+                <button id="btnWorld" class="button is-medium is-info is-selected">Top World Cities</button>
+                <button id="btnIndia" class="button is-medium is-light">Top Indian Cities</button>
+              </div>
+            </div>
+
+            <h2 id="cityTitle" class="subtitle is-5 mb-2 has-text-centered">Top 10 Cities in the World</h2>
+            <div id="citiesContainer" class="columns is-multiline has-text-centered"></div>
+
+            <div class="field has-addons is-flex is-justify-content-center mb-4">
+              <div class="control has-icons-left is-expanded">
+                <input id="cityInput" class="input is-medium" type="text" placeholder="Enter city name..."/>
+                <span class="icon is-left is-small"><i class="fas fa-city"></i></span>
+              </div>
+              <div class="control">
+                <button id="btnSearch" class="button is-info is-medium">Search</button>
+              </div>
+            </div>
+
+            <div id="loadingSpinner" class="has-text-centered my-5 is-hidden">
+              <button class="button is-white is-loading is-large" style="border: none"></button>
+            </div>
+
+            <div id="weatherInfo" class="has-text-centered"></div>
+            <div id="errorMessage" class="notification is-danger is-light has-text-centered mt-4 is-hidden"></div>
+
+            <div class="has-text-centered mt-6">
+              <p>
+                Powered by
+                <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 <script src="./js/script.js"></script>
 </body>

@@ -1,32 +1,31 @@
-
-   body {
+body {
 	font-family: 'Ubuntu', sans-serif;
-	transition: background-color 0.3s ease, color 0.3s ease; 
- }
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
 
- .hero {
+.hero {
 	background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
 	background-repeat: no-repeat;
 	background-size: cover;
 	border-radius: 8px;
 	padding: 2rem;
- }
- 
- 
- .footer {
+}
+
+
+.footer {
 	background-color: #6f5af8;
 	padding: 1rem;
 	text-align: center;
- }
+}
 
- @media (max-width: 768px) {
+@media (max-width: 768px) {
 	.columns {
-	   margin: 0;
+		margin: 0;
 	}
- }
- 
- @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
 	.hero-body {
-	   padding: 2rem 0.5rem;
+		padding: 2rem 0.5rem;
 	}
- }
+}
