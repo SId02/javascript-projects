@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Infinite Scroll </title>
+        <link rel="stylesheet" href="../css/bulma.css" />
+        <style>
+            .post-grid .card {
+                margin: 1rem;
+            }
+
+            .post-list .card {
+                margin: 1rem 0;
+            }
+
+            #toggle-view {
+                margin: 1em 0;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="breadcrumb is-centered is-medium" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Infinite Scroll</a></li>
+        </ul>
+    </nav>
+        <section class="section">
+            <div class="container">
+                <button id="toggle-view" class="button is-primary">Switch to Grid View</button>
+                <div id="posts-container" class="columns is-multiline post-list"></div>
+                <div id="loader" class="has-text-centered" style="padding:1.5em; display:none;">Loading...</div>
+            </div>
+        </section>
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,31 +1,93 @@
-body {
-	font-family: 'Ubuntu', sans-serif;
-	transition: background-color 0.3s ease, color 0.3s ease;
+
+:root {
+    --background-color: #f0f2f5;
+    --text-color: #363636;
+    --box-bg-color: #ffffff;
+    --box-shadow: 0 4px 6px rgba(10, 10, 10, 0.1);
+    --hero-gradient: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8);
+    --link-color: #363636
 }
 
-.hero {
-	background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
-	background-repeat: no-repeat;
-	background-size: cover;
-	border-radius: 8px;
-	padding: 2rem;
+.dark-mode {
+    --background-color: #2c3e50;
+    --text-color: #ecf0f1;
+    --box-bg-color: #34495e;
+    --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    --hero-gradient: linear-gradient(to right bottom, #1e3c72, #2a5298);
+    --link-color: #ecf0f1; 
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.hero.is-primary {
+    background-image: var(--hero-gradient) !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0; 
+    padding: 3rem 1.5rem;
+}
+
+.box {
+    background-color: var(--box-bg-color);
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+}
+
+.box a {
+    color: var(--link-color);
+    font-weight: 700;
+    font-size: 1.1em;
+    display: block;
+    padding: 0.5rem;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+ 
+#load-more-btn {
+    border-bottom: #00b3ff 4px solid;
 }
 
 
 .footer {
-	background-color: #6f5af8;
-	padding: 1rem;
-	text-align: center;
+    background-color: #79cdf2;
+    padding:  1rem;
 }
 
-@media (max-width: 768px) {
-	.columns {
-		margin: 0;
-	}
+.mode-toggle-container {
+    text-align: right;
+    padding: 1rem 2rem 0;
 }
 
-@media (max-width: 480px) {
-	.hero-body {
-		padding: 2rem 0.5rem;
-	}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
+.project-column {
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.pulse-animation {
+    animation: pulse 4s infinite ease-in-out;
+}
+	
